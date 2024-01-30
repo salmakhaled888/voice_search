@@ -1,0 +1,6 @@
+Pillow
+gunicorn
+arabic-reshaper
+python-bidi
+SpeechRecognition
+
