@@ -16,8 +16,11 @@ try:
     reshaped_text = arabic_reshaper.reshape(recognized_text)  # Reshape Arabic letters
     bidi_text = get_display(reshaped_text)  # Apply BiDi formatting
     print(bidi_text.lower())  # Convert to lowercase for consistency
+    return bidi_text.lower()
 
 except sr.UnknownValueError:
     print("Could not understand audio")
+    return "Could not understand audio"
 except sr.RequestError as e:
     print("Could not request results from Google Speech Recognition service; {0}".format(e))
+    return "Could not request results from Google Speech Recognition service; {0}".format(e)
